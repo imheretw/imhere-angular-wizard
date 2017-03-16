@@ -6,6 +6,7 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var path = require('path');
 
 /**
  * Env
@@ -30,7 +31,8 @@ module.exports = function makeWebpackConfig() {
    * Karma will set this when it's a test build
    */
   config.entry = isTest ? void 0 : {
-    app: './src/app/app.js'
+    app: './examples/default/app/app.js',
+    components: './src/components/index.js',
   };
 
   /**
@@ -54,6 +56,13 @@ module.exports = function makeWebpackConfig() {
     // Filename for non-entry points
     // Only adds hash in build mode
     chunkFilename: isProd ? '[name].[hash].js' : '[name].bundle.js'
+  };
+
+  config.resolve = {
+    alias: {
+      app: path.resolve(__dirname, 'examples/default/app/'),
+      'imhere-angular-wizard': path.resolve(__dirname, 'src/components/'),
+    },
   };
 
   /**
@@ -176,7 +185,7 @@ module.exports = function makeWebpackConfig() {
     // Render index.html
     config.plugins.push(
       new HtmlWebpackPlugin({
-        template: './src/public/index.html',
+        template: './examples/default/index.html',
         inject: 'body'
       }),
 
@@ -205,7 +214,7 @@ module.exports = function makeWebpackConfig() {
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
       new CopyWebpackPlugin([{
-        from: __dirname + '/src/public'
+        from: __dirname + '/examples/default'
       }])
     )
   }
@@ -216,7 +225,7 @@ module.exports = function makeWebpackConfig() {
    * Reference: http://webpack.github.io/docs/webpack-dev-server.html
    */
   config.devServer = {
-    contentBase: './src/public',
+    contentBase: './examples/default',
     stats: 'minimal'
   };
 

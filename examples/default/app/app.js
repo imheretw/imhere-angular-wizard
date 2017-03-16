@@ -1,4 +1,5 @@
 import angular from 'angular';
+import 'imhere-angular-wizard';
 
 import '../style/app.css';
 
@@ -18,7 +19,9 @@ class AppCtrl {
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [])
+angular.module(MODULE_NAME, [
+  'imhere-angular-wizard',
+])
   .directive('app', app)
   .controller('AppCtrl', AppCtrl);
 
