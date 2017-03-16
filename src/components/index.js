@@ -1,7 +1,7 @@
 import angular from 'angular';
-import imhereAngularWizard from './imhere-angular-wizard';
+import imhereWizard from './imhere-wizard';
 
 export default angular
   .module('imhere-angular-wizard', [
-    imhereAngularWizard.name,
-  ]);;
+    imhereWizard.name,
+  ]);

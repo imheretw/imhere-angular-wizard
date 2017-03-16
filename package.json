@@ -1,7 +1,7 @@
 {
   "name": "angular-webpack-workflow",
   "version": "1.1.0",
-  "description": "A workflow for Angular made with Webpack",
+  "description": "An Angular wizard component made with Webpack",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/Foxandxss/angular-webpack-workflow.git"
   },
-  "author": "Jesus Rodriguez",
+  "author": "Imhere",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Foxandxss/angular-webpack-workflow/issues"
