@@ -1,7 +1,7 @@
 /* styles in src/style directory are applied to the whole page */
 body {
-  background: #0147A7;
-  color: #fff;
+  background: #ffffff;
+  color: #7e7e7e;
 }
 
 a {
@@ -19,4 +19,16 @@ main {
 footer {
   text-align: center;
   font-size: 0.8em;
+}
+.title{
+  position: relative;
+}
+.title:after{
+  content:'';
+  display:block;
+  width: 100%;
+  height: 1 px;
+  position: absolute;
+  bottom:5px;
+  border-bottom: 1px rgb(168, 168, 168) dashed;
 }

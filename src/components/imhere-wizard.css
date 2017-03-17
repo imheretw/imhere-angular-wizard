@@ -1,0 +1,18 @@
+.imhere-wizard-container{
+  width: 100%;
+  text-align: center;
+  position:relative;
+}
+.imhere-dotted-container{
+  width:100%;
+  text-align: center;
+  position: relative;
+}
+
+.imhere-dotted-container a {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: rgb(80, 144, 161);
+  border-radius: 100%;
+}
