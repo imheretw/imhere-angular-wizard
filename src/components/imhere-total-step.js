@@ -18,9 +18,9 @@ const component = {
   },
   controller: Controller,
   controllerAs: 'vm',
-  template: require('./imhere-select-steps.html'),
+  template: require('./imhere-total-step.html'),
 };
 
 export default angular
-  .module('imhere-angular-wizard.imhere-select-steps', [])
-  .component('imhereSelectSteps', component);
+  .module('imhere-angular-wizard.imhere-total-step', [])
+  .component('imhereTotalStep', component);
