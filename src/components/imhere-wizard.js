@@ -17,6 +17,10 @@ class Controller {
     this.currentStep = index;
   }
 
+  nextStep(){
+    this.currentStep = this.currentStep%this.steps.length+1;
+  }
+
 }
 
 const component = {
