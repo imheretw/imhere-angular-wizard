@@ -5,6 +5,8 @@ import imhereStepBtn from './imhere-step-btn';
 import imhereCurrentStep from './imhere-current-step';
 import imhereTotalStep from './imhere-total-step';
 import imhereNext from './imhere-next';
+import imherePre from './imhere-pre';
+import imhereComplete from './imhere-complete';
 
 import './imhere-wizard.css';
 
@@ -16,4 +18,6 @@ export default angular
     imhereCurrentStep.name,
     imhereTotalStep.name,
     imhereNext.name,
+    imherePre.name,
+    imhereComplete.name,
   ]);
