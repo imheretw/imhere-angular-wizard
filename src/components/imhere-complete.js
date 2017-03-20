@@ -3,10 +3,11 @@ import angular from 'angular';
 class Controller {
 
   constructor() {
-    this.$onInit = function() {
-      this.test = this.wizardCtrl.indicatorsPosition;
-    };
   }
+  $onInit() {
+    this.test = this.wizardCtrl.indicatorsPosition;
+  }
+
 }
 
 const component = {

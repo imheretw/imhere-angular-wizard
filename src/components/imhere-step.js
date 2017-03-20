@@ -5,6 +5,7 @@ class Controller {
   constructor() {
 
   }
+  
 }
 
 const component = {
