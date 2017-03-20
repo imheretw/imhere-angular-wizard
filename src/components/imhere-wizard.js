@@ -1,19 +1,23 @@
 import angular from 'angular';
 
 class Controller {
+
+  constructor() {
+    if (this.indicatorsPosition === undefined) {
+        this.indicatorsPosition = 'bottom';
+    }
+  }
+
 }
 
 const component = {
   bindings: {
+    indicatorsPosition: '@?'
   },
   transclude: true,
   controller: Controller,
   controllerAs: 'vm',
-  template: `
-  <div>
-    Imhere Component
-  </div>
-  `,
+  template: require('./imhere-wizard.html'),
 };
 
 export default angular
