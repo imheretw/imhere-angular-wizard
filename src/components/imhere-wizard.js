@@ -8,8 +8,6 @@ class Controller {
     }
   }
 
-
-
 }
 
 const component = {
