@@ -13,12 +13,17 @@ class Controller {
     return index === this.currentStep;
   }
 
-  setCurrentStep(index){
+  setCurrentStep(index) {
     this.currentStep = index;
   }
 
-  nextStep(){
+  nextStep() {
     this.currentStep = this.currentStep%this.steps.length+1;
+  }
+  preStep() {
+    if(this.currentStep > 1){
+      this.currentStep = this.currentStep-1;
+    }
   }
 
 }
