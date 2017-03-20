@@ -15,3 +15,6 @@
   background: rgb(80, 144, 161);
   border-radius: 100%;
 }
+.imhere-step-btn {
+  cursor: pointer;
+}

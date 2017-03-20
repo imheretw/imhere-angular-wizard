@@ -13,6 +13,10 @@ class Controller {
     return index === this.currentStep;
   }
 
+  setCurrentStep(index){
+    this.currentStep = index;
+  }
+
 }
 
 const component = {

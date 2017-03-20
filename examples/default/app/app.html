@@ -25,7 +25,7 @@
           </imhere-step>
         </div>
         <div class="col-md-3">
-          <imhere-step-btn ng-repeat="step in [1,2,3] track by $index" step="{{$index+1}}">{{$index}}</imhere-step-btn>
+          <imhere-step-btn ng-repeat="step in [1,2,3] track by $index" step-index="$index+1">{{$index}}</imhere-step-btn>
         </div>
         <div class="col-md-12">
           <imhere-current-step></imhere-current-step> of <imhere-total-step></imhere-total-step>

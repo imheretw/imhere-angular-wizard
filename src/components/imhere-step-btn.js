@@ -3,15 +3,22 @@ import angular from 'angular';
 class Controller {
 
   constructor() {
+
   }
   $onInit() {
-    this.test = this.wizardCtrl.indicatorsPosition;
+    this.isSelected = this.wizardCtrl.isCurrentStep(this.stepIndex);
   }
-  
+
+  goto() {
+    this.wizardCtrl.setCurrentStep(this.stepIndex);
+  }
+
+
 }
 
 const component = {
   bindings: {
+    stepIndex: '<',
   },
   transclude: true,
   require: {
