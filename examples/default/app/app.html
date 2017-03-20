@@ -1,29 +1,40 @@
 <main>
   <h1 class="title">Hello from Imhere Angular Wizard !</h1>
+  <div class="container">
 
-  <imhere-wizard indicators-position="top">
-    <imhere-step>
-        <h1>Continuing</h1>
-        <p>You have continued here!</p>
-        <input type="submit" wz-next value="Go on" />
-    </imhere-step>
-    <imhere-step>
-        <h1>Continuing</h1>
-        <p>You have continued here!</p>
-        <input type="submit" wz-next value="Go on" />
-    </imhere-step>
-    <imhere-step>
-        <h1>Continuing</h1>
-        <p>You have continued here!</p>
-        <input type="submit" wz-next value="Go on" />
-        <imhere-next>1231313</imhere-next>
-        <imhere-pre>hihi</imhere-pre>
-        <imhere-complete>hihi2</imhere-complete>
-    </imhere-step>
-    <imhere-total-step></imhere-total-step>
-    <imhere-step-btn>123456</imhere-step-btn>
-    <imhere-current-step></imhere-current-step>
+    <imhere-wizard>
+      <div class="row">
+        <div class="col-md-9">
+          <imhere-step title="Continuing">
+            <h1>Continuing</h1>
+            <p>You have continued here!</p>
+            <input type="submit" wz-next value="Go on" />
+          </imhere-step>
+          <imhere-step title="Continuing2">
+            <h1>Continuing</h1>
+            <p>You have continued here!</p>
+            <input type="submit" wz-next value="Go on" />
+          </imhere-step>
+          <imhere-step title="Continuing3">
+            <h1>Continuing</h1>
+            <p>You have continued here!</p>
+            <input type="submit" wz-next value="Go on" />
+            <imhere-next>1231313</imhere-next>
+            <imhere-pre>hihi</imhere-pre>
+            <imhere-complete>hihi2</imhere-complete>
+          </imhere-step>
+        </div>
+        <div class="col-md-3">
+          <imhere-step-btn ng-repeat="step in [1,2,3] track by $index" step="{{$index+1}}">{{$index}}</imhere-step-btn>
+        </div>
+        <div class="col-md-12">
+          <imhere-current-step></imhere-current-step> of <imhere-total-step></imhere-total-step>
+        </div>
+      </div>
 
-  </imhere-wizard>
+    </imhere-wizard>
+
+
+  </div>
 
 </main>

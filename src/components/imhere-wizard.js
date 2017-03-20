@@ -3,16 +3,21 @@ import angular from 'angular';
 class Controller {
 
   constructor() {
-    if (this.indicatorsPosition === undefined) {
-        this.indicatorsPosition = 'bottom';
-    }
+     // from imhere-step-component
+     this.steps = [];
+     this.currentStep = 1;
+
+  }
+
+  isCurrentStep(index) {
+    return index === this.currentStep;
   }
 
 }
 
 const component = {
   bindings: {
-    indicatorsPosition: '@?'
+    onFinish: '&',
   },
   transclude: true,
   controller: Controller,

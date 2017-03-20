@@ -7,7 +7,7 @@ class Controller {
   $onInit() {
     this.test = this.wizardCtrl.indicatorsPosition;
   }
-  
+
 }
 
 const component = {
