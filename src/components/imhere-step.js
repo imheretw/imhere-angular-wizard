@@ -6,7 +6,6 @@ class Controller {
 
   }
   $onInit() {
-    console.log(this.wizardCtrl.steps.length);
     this.stepIndex =  this.wizardCtrl.steps.length + 1;
     this.wizardCtrl.steps.push({title:this.title});
   }

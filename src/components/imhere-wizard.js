@@ -25,6 +25,9 @@ class Controller {
       this.currentStep = this.currentStep-1;
     }
   }
+  complete() {
+    this.onFinish();
+  }
 
 }
 
