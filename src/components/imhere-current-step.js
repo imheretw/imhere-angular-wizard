@@ -4,10 +4,8 @@ class Controller {
 
   constructor() {
   }
-  $onInit() {
-    this.test = this.wizardCtrl.indicatorsPosition;
-  }
-  
+
+
 }
 
 const component = {

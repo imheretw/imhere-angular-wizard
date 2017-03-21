@@ -18,6 +18,6 @@
 .imhere-step-btn {
   cursor: pointer;
 }
-.imhere-next, .imhere-pre{
+.imhere-next, .imhere-pre, .imhere-total-step, .imhere-current-step, .imhere-complete{
   cursor: pointer;
 }
