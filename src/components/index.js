@@ -9,6 +9,7 @@ import imherePre from './imhere-pre';
 import imhereComplete from './imhere-complete';
 
 import './imhere-wizard.css';
+import './imhere-hover.css';
 
 export default angular
   .module('imhere-angular-wizard', [
