@@ -4,6 +4,9 @@ class Controller {
 
   constructor() {
   }
+  $onInit() {
+    this.showAnimation = (this.disableHoverClass) ? false : true;
+  }
 
   next(){
     this.wizardCtrl.nextStep();
@@ -13,6 +16,8 @@ class Controller {
 
 const component = {
   bindings: {
+    disableHoverClass:'<',
+    customeClass:'@',
   },
   restrict: 'EA',
   transclude: true,

@@ -1,1 +1,1 @@
-<a class="imhere-next imhere-bounce-to-right" ng-click="vm.next()"><ng-transclude></ng-transclude></a>
+<a class="{{vm.customeClass}}" ng-class="{'imhere-bounce-to-right' : vm.showAnimation, 'imhere-next': !vm.customeClass}" ng-click="vm.next()"><ng-transclude></ng-transclude></a>
