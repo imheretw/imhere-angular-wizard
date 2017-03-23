@@ -12,6 +12,33 @@
           <imhere-step title="Continuing2">
             <h1>Continuing2</h1>
             <p>You have continued here!</p>
+            <imhere-pre>BACK</imhere-pre>
+            <imhere-next>NEXT ></imhere-next>
+          </imhere-step>
+          <imhere-step title="Continuing3">
+            <h1>Continuing3</h1>
+            <p>You have continued here!</p>
+            <imhere-pre>BACK</imhere-pre>
+            <imhere-complete>COMPLETE !</imhere-complete>
+          </imhere-step>
+        </div>
+        <div class="col-md-9">
+          <imhere-current-step></imhere-current-step> of <imhere-total-step></imhere-total-step>
+        </div>
+      </div>
+
+    </imhere-wizard>
+    <imhere-wizard on-finish="app.finish()" set-main-hover-color="#4dcdbb">
+      <div class="row">
+        <div class="col-md-9">
+          <imhere-step title="Continuing">
+            <h1>Continuing</h1>
+            <p>You have continued here!</p>
+            <imhere-next>NEXT </imhere-next>
+          </imhere-step>
+          <imhere-step title="Continuing2">
+            <h1>Continuing2</h1>
+            <p>You have continued here!</p>
             <imhere-next>NEXT</imhere-next>
             <imhere-pre>BACK</imhere-pre>
           </imhere-step>
