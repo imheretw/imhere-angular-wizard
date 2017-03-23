@@ -1,13 +1,15 @@
-.imhere-wizard-container{
+.imhere-wizard-container {
   width: 100%;
-  position:relative;
+  position: relative;
 }
-.imhere-dotted-container{
-  width:100%;
+.imhere-wizard-container a {
+  cursor: pointer;
+}
+.imhere-dotted-container {
+  width: 100%;
   text-align: center;
   position: relative;
 }
-
 .imhere-dotted-container a {
   display: inline-block;
   width: 5px;
@@ -18,6 +20,9 @@
 .imhere-step-btn {
   cursor: pointer;
 }
-.imhere-next, .imhere-pre, .imhere-total-step, .imhere-current-step, .imhere-complete{
+.imhere-next, .imhere-pre, .imhere-total-step, .imhere-current-step, .imhere-complete {
   cursor: pointer;
+}
+.imhere-steps-container {
+  position: relative;
 }
