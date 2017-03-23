@@ -1,65 +1,105 @@
 <main>
   <h1 class="title">Hello from Imhere Angular Wizard !</h1>
-  <div class="container">
-    <imhere-wizard on-finish="app.finish()" set-main-color="#6bbed7" >
-      <div class="row">
-        <div class="col-md-9">
-          <imhere-step title="Continuing">
-            <h1>Continuing</h1>
-            <p>You have continued here!</p>
-            <imhere-next>NEXT ></imhere-next>
-          </imhere-step>
-          <imhere-step title="Continuing2">
-            <h1>Continuing2</h1>
-            <p>You have continued here!</p>
-            <imhere-pre>BACK</imhere-pre>
-            <imhere-next>NEXT ></imhere-next>
-          </imhere-step>
-          <imhere-step title="Continuing3">
-            <h1>Continuing3</h1>
-            <p>You have continued here!</p>
-            <imhere-pre>BACK</imhere-pre>
-            <imhere-complete>COMPLETE !</imhere-complete>
-          </imhere-step>
-        </div>
-        <div class="col-md-9">
-          <imhere-current-step></imhere-current-step> of <imhere-total-step></imhere-total-step>
-        </div>
+  <div class="container main-content">
+    <div class="row main-description ">
+      <div class="col-md-6 col-md-offset-3">
+        <p class="text-left">
+          A collection of CSS3 powered hover effects to be applied to links, buttons, logos, SVG,
+          featured images and so on. Easily apply to your own elements, modify or just use for inspiration.
+          Available in CSS, Sass, and LESS.
+        </p>
+        <a class="download-btn hvr-float-shadow "><i class="fa fa-github" aria-hidden="true"></i> Download on Github</a>
       </div>
-
-    </imhere-wizard>
-    <imhere-wizard on-finish="app.finish()" set-main-hover-color="#4dcdbb">
-      <div class="row">
-        <div class="col-md-9">
-          <imhere-step title="Continuing">
-            <h1>Continuing</h1>
-            <p>You have continued here!</p>
-            <imhere-next>NEXT </imhere-next>
-          </imhere-step>
-          <imhere-step title="Continuing2">
-            <h1>Continuing2</h1>
-            <p>You have continued here!</p>
-            <imhere-next>NEXT</imhere-next>
-            <imhere-pre>BACK</imhere-pre>
-          </imhere-step>
-          <imhere-step title="Continuing3">
-            <h1>Continuing3</h1>
-            <p>You have continued here!</p>
-            <imhere-pre>BACK</imhere-pre>
-            <imhere-complete>Complete</imhere-complete>
-          </imhere-step>
+    </div>
+    <div class="page-header text-left">
+      <h3>Example</h3>
+    </div>
+    <div class="pannel-box">
+      <imhere-wizard on-finish="app.finish()" set-main-color="#6bbed7" >
+        <div class="row">
+          <div class="col-md-12">
+            <imhere-step title="Continuing">
+              <h1>Continuing</h1>
+              <p>You have continued here!</p>
+              <imhere-next>NEXT ></imhere-next>
+            </imhere-step>
+            <imhere-step title="Continuing2">
+              <h1>Continuing2</h1>
+              <p>You have continued here!</p>
+              <imhere-pre>BACK</imhere-pre>
+              <imhere-next>NEXT ></imhere-next>
+            </imhere-step>
+            <imhere-step title="Continuing3">
+              <h1>Continuing3</h1>
+              <p>Click Complete will trigger onFinsh function</p>
+              <imhere-pre>BACK</imhere-pre>
+              <imhere-complete>COMPLETE !</imhere-complete>
+            </imhere-step>
+          </div>
+          <div class="col-md-12">
+            <imhere-current-step></imhere-current-step> of <imhere-total-step></imhere-total-step>
+          </div>
         </div>
-        <div class="col-md-3">
-          <imhere-step-btn ng-repeat="step in [1,2,3] track by $index" step-index="$index+1">{{$index}}</imhere-step-btn>
+      </imhere-wizard>
+    </div>
+    <div class="pannel-box">
+      <imhere-wizard on-finish="app.finish()" set-main-hover-color="#4dcdbb">
+        <div class="row">
+          <div class="col-md-12">
+            <imhere-step title="Continuing">
+              <h1>Continuing</h1>
+              <p>You have continued here!</p>
+              <imhere-next>NEXT </imhere-next>
+            </imhere-step>
+            <imhere-step title="Continuing2">
+              <h1>Continuing2</h1>
+              <p>You have continued here!</p>
+              <imhere-next>NEXT</imhere-next>
+              <imhere-pre>BACK</imhere-pre>
+            </imhere-step>
+            <imhere-step title="Continuing3">
+              <h1>Continuing3</h1>
+              <p>Click Complete will trigger onFinsh function</p>
+              <imhere-pre>BACK</imhere-pre>
+              <imhere-complete>Complete</imhere-complete>
+            </imhere-step>
+          </div>
+          <div class="col-md-12">
+            <imhere-step-btn ng-repeat="step in [1,2,3] track by $index" step-index="$index+1">{{$index}}</imhere-step-btn>
+          </div>
         </div>
-        <div class="col-md-9">
-          <imhere-current-step></imhere-current-step> of <imhere-total-step></imhere-total-step>
+      </imhere-wizard>
+    </div>
+    <div class="pannel-box">
+      <imhere-wizard on-finish="app.finish()" set-main-hover-color="#4dcdbb">
+        <div class="row">
+
+          <div class="col-md-10">
+            <imhere-step title="Continuing">
+              <h1>Continuing</h1>
+              <p>You have continued here!</p>
+              <imhere-next>NEXT </imhere-next>
+            </imhere-step>
+            <imhere-step title="Continuing2">
+              <h1>Continuing2</h1>
+              <p>You have continued here!</p>
+              <imhere-next>NEXT</imhere-next>
+              <imhere-pre>BACK</imhere-pre>
+            </imhere-step>
+            <imhere-step title="Continuing3">
+              <h1>Continuing3</h1>
+              <p>Click Complete will trigger onFinsh function</p>
+              <imhere-pre>BACK</imhere-pre>
+              <imhere-complete>Complete</imhere-complete>
+            </imhere-step>
+          </div>
+          <div class="col-md-2">
+            <imhere-step-btn ng-repeat="step in [1,2,3] track by $index" step-index="$index+1">{{$index}}</imhere-step-btn>
+          </div>
         </div>
-      </div>
-
-    </imhere-wizard>
-
-
+      </imhere-wizard>
+    </div>
   </div>
+  <div class="footer"></div>
 
 </main>

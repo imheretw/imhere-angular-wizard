@@ -17,7 +17,7 @@ class AppCtrl {
     this.url = 'https://github.com/preboot/angular-webpack';
   }
   finish() {
-    $log.debug('finish');
+    this.$log.debug('finish');
   }
 }
 
