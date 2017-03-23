@@ -1,6 +1,5 @@
 .imhere-wizard-container{
   width: 100%;
-  text-align: center;
   position:relative;
 }
 .imhere-dotted-container{
@@ -15,4 +14,10 @@
   height: 5px;
   background: rgb(80, 144, 161);
   border-radius: 100%;
+}
+.imhere-step-btn {
+  cursor: pointer;
+}
+.imhere-next, .imhere-pre, .imhere-total-step, .imhere-current-step, .imhere-complete{
+  cursor: pointer;
 }

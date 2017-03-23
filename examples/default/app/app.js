@@ -12,8 +12,12 @@ let app = () => {
 };
 
 class AppCtrl {
-  constructor() {
+  constructor($log) {
+    this.$log = $log;
     this.url = 'https://github.com/preboot/angular-webpack';
+  }
+  finish() {
+    $log.debug('finish');
   }
 }
 

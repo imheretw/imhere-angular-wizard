@@ -5,11 +5,19 @@ class Controller {
   constructor() {
 
   }
-  
+  $onInit() {
+    this.stepIndex =  this.wizardCtrl.steps.length + 1;
+    this.wizardCtrl.steps.push({title:this.title});
+  }
+
 }
 
 const component = {
   bindings: {
+    title: '@'
+  },
+  require: {
+    wizardCtrl: '^imhereWizard'
   },
   transclude: true,
   controller: Controller,

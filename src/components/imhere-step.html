@@ -1,1 +1,3 @@
-<div class="imhere-steps-container"><ng-transclude></ng-transclude></div>
+<div class="imhere-steps-container" ng-show="vm.wizardCtrl.isCurrentStep(vm.stepIndex)">
+  <ng-transclude></ng-transclude>
+</div>
