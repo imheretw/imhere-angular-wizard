@@ -12,12 +12,19 @@
   text-align: center;
   position: relative;
 }
-.imhere-dotted-container a {
+a.imhere-dotted {
   display: inline-block;
   width: 5px;
   height: 5px;
   background: var(--main-color);
   border-radius: 100%;
+  margin-left: 3px;
+}
+a.imhere-dotted.selected{
+  background: var(--main-hover-color);
+  width: 6px;
+  height: 6px;
+
 }
 .imhere-step-btn {
   cursor: pointer;

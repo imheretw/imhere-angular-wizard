@@ -5,15 +5,14 @@ class Controller {
   constructor() {
 
   }
-  isSelected(){
-    return this.wizardCtrl.currentStep === this.stepIndex;
+  isSelected(index){
+    return this.wizardCtrl.currentStep === index+1;
   }
 
 }
 
 const component = {
   bindings: {
-    stepIndex: '<',
   },
   transclude: true,
   require: {
@@ -21,9 +20,9 @@ const component = {
   },
   controller: Controller,
   controllerAs: 'vm',
-  template: require('./imhere-step-btn.html'),
+  template: require('./imhere-steps-dotted.html'),
 };
 
 export default angular
-  .module('imhere-angular-wizard.imhere-step-btn', [])
-  .component('imhereStepBtn', component);
+  .module('imhere-angular-wizard.imhere-steps-dotted', [])
+  .component('imhereStepsDotted', component);

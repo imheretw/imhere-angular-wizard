@@ -46,7 +46,7 @@
                  <imhere-next disabled="app.check()">NEXT ></imhere-next>
                </div>
             </imhere-step>
-            <imhere-step title="Continuing3">
+            <imhere-step title="Step3">
               <h1>Step3</h1>
               <p>Click Complete will trigger onFinsh function</p>
               <imhere-pre>BACK</imhere-pre>
@@ -60,35 +60,36 @@
       </imhere-wizard>
     </div>
     <div class="pannel-box">
-      <imhere-wizard on-finish="app.finish()" set-main-hover-color="#4dcdbb">
+      <imhere-wizard on-finish="app.finish()" set-main-hover-color="#eb9c4a">
         <div class="row">
           <div class="col-md-12">
-            <imhere-step title="Continuing">
-              <h1>Continuing</h1>
-              <p>You have continued here!</p>
+            <imhere-step title="Step1">
+              <h1>Step1</h1>
+              <p>&lt;imhere-steps-dotted&gt;</p>
+              <p>Display dotteds</p>
               <imhere-next>NEXT </imhere-next>
             </imhere-step>
-            <imhere-step title="Continuing2" disabled="app.check()">
-              <h1>Continuing2</h1>
+            <imhere-step title="Step2" disabled="app.check()">
+              <h1>Step2</h1>
               <p>You have continued here!</p>
               <imhere-pre>BACK</imhere-pre>
               <imhere-next>NEXT</imhere-next>
             </imhere-step>
-            <imhere-step title="Continuing3">
-              <h1>Continuing3</h1>
+            <imhere-step title="Step3">
+              <h1>Step3</h1>
               <p>Click Complete will trigger onFinsh function</p>
               <imhere-pre>BACK</imhere-pre>
               <imhere-complete>Complete</imhere-complete>
             </imhere-step>
           </div>
           <div class="col-md-12">
-            <imhere-step-btn ng-repeat="step in [1,2,3] track by $index" step-index="$index+1">{{$index}}</imhere-step-btn>
+            <imhere-steps-dotted>{{$index}}</imhere-steps-dotted>
           </div>
         </div>
       </imhere-wizard>
     </div>
     <div class="pannel-box">
-      <imhere-wizard on-finish="app.finish()" set-main-hover-color="#4dcdbb">
+      <imhere-wizard on-finish="app.finish()" set-main-hover-color="#eb9c4a">
         <div class="row">
 
           <div class="col-md-10">
