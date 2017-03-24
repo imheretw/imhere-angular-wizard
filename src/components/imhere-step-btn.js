@@ -6,7 +6,7 @@ class Controller {
 
   }
   isSelected(){
-    return this.wizardCtrl.currentStep === this.stepIndex;
+    return this.wizardCtrl.currentStep === this.stepIndex + 1;
   }
 
 }
@@ -14,6 +14,7 @@ class Controller {
 const component = {
   bindings: {
     stepIndex: '<',
+    customeClass: '@',
   },
   transclude: true,
   require: {

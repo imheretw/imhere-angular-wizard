@@ -6,7 +6,7 @@ class Controller {
   }
   $onInit() {
     this.stepIndex =  this.wizardCtrl.steps.length + 1;
-    this.wizardCtrl.steps.push({title:this.title, disabled:this.disabled});
+    this.wizardCtrl.steps.push({ title:this.title, disabled:this.disabled });
   }
 
 }
