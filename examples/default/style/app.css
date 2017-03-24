@@ -76,5 +76,10 @@ a.reset-btn{
   height: 30vh;
 }
 a.custome{
-  background: rgb(134, 182, 31);
+  color:rgb(46, 165, 232);
+  padding: 10px 50px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+  border:1px rgb(46, 165, 232) solid;
 }

@@ -22,7 +22,7 @@ const component = {
   },
   transclude: true,
   require: {
-    wizardCtrl: '^imhereWizard'
+    wizardCtrl: '^imhereWizard',
   },
   controller: Controller,
   controllerAs: 'vm',

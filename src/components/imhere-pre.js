@@ -8,7 +8,9 @@ class Controller {
     this.showAnimation = (this.disableHoverClass) ? false : true;
   }
   pre(){
-    this.wizardCtrl.preStep();
+    if( !this.disabled ){
+      this.wizardCtrl.preStep();
+    }
   }
 
 }
@@ -17,11 +19,12 @@ const component = {
   bindings: {
     disableHoverClass:'<',
     customeClass:'@',
+    disabled:'=',
   },
   restrict: 'EA',
   transclude: true,
   require: {
-    wizardCtrl: '^imhereWizard'
+    wizardCtrl: '^imhereWizard',
   },
   controller: Controller,
   controllerAs: 'vm',

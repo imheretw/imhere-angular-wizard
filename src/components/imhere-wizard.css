@@ -6,7 +6,6 @@
 /*--main-color from imher-wizard component*/
 .imhere-wizard-container a {
   cursor: pointer;
-  color: var(--main-color);
 }
 .imhere-dotted-container {
   width: 100%;
@@ -17,7 +16,7 @@
   display: inline-block;
   width: 5px;
   height: 5px;
-  background: rgb(80, 144, 161);
+  background: var(--main-color);
   border-radius: 100%;
 }
 .imhere-step-btn {
@@ -25,6 +24,7 @@
 }
 .imhere-next, .imhere-pre, .imhere-total-step, .imhere-current-step, .imhere-complete {
   cursor: pointer;
+  color: var(--main-color);
 }
 a.imhere-next, a.imhere-pre, a.imhere-complete {
   padding: 10px 50px;

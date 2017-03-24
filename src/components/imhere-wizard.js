@@ -40,6 +40,7 @@ class Controller {
   	}
   	return (usePound ? '#' : '') + (g | (b << 8) | (r << 16)).toString(16);
   }
+
   isCurrentStep(index) {
     return index === this.currentStep;
   }
@@ -52,9 +53,7 @@ class Controller {
     this.currentStep = this.currentStep%this.steps.length+1;
   }
   preStep() {
-    if(this.currentStep > 1){
-      this.currentStep = this.currentStep-1;
-    }
+    this.currentStep = this.currentStep-1;
   }
   complete() {
     this.onFinish();

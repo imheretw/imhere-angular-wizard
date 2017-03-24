@@ -8,7 +8,9 @@ class Controller {
     this.showAnimation = (this.disableHoverClass) ? false : true;
   }
   complete() {
-    this.wizardCtrl.complete();
+    if( !this.disabled ){
+      this.wizardCtrl.complete();
+    }
   }
 
 }
@@ -17,6 +19,7 @@ const component = {
   bindings: {
     disableHoverClass:'<',
     customeClass:'@',
+    disabled:'=',
   },
   restrict: 'EA',
   transclude: true,
