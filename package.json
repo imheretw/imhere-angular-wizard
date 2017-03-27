@@ -1,8 +1,8 @@
 {
-  "name": "imhere-wizard-component",
-  "version": "1.1.2",
+  "name": "imhere-angular-wizard",
+  "version": "1.1.3",
   "description": "An Angular wizard component made with Webpack",
-  "main": "dist/imhere-wizard-component.js",
+  "main": "dist/imhere-angular-wizard.js",
   "files": [
     "dist"
   ],
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Foxandxss/angular-webpack-workflow.git"
+    "url": "https://github.com/imhretw/imhere-angular-starter.git"
   },
   "author": "Imhere",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Foxandxss/angular-webpack-workflow/issues"
+    "url": "https://github.com/imhretw/imhere-angular-starter/issues"
   },
-  "homepage": "https://github.com/Foxandxss/angular-webpack-workflow",
+  "homepage": "https://github.com/imhretw/imhere-angular-starter",
   "dependencies": {
     "angular": "^1.5.0"
   },
