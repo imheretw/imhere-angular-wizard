@@ -52,9 +52,13 @@
               <imhere-pre>BACK</imhere-pre>
               <imhere-complete>COMPLETE !</imhere-complete>
             </imhere-step>
+            <imhere-step-complete>
+              <h1>Complete!</h1>
+              <p>display what you want</p>
+            </imhere-step-complete>
           </div>
           <div class="col-md-12">
-            <imhere-current-step></imhere-current-step> of <imhere-total-step></imhere-total-step>
+              <imhere-current-step> of </imhere-current-step><imhere-total-step></imhere-total-step>
           </div>
         </div>
       </imhere-wizard>
@@ -83,7 +87,7 @@
             </imhere-step>
           </div>
           <div class="col-md-12">
-            <imhere-steps-dotted>{{$index}}</imhere-steps-dotted>
+            <imhere-steps-dotted></imhere-steps-dotted>
           </div>
         </div>
       </imhere-wizard>
