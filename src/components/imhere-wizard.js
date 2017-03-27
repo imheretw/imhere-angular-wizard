@@ -6,6 +6,7 @@ class Controller {
      // from imhere-step-component
      this.steps = [];
      this.currentStep = 1;
+     this.completeWizard = false;
 
   }
   $onInit() {
@@ -57,6 +58,7 @@ class Controller {
   }
   complete() {
     this.onFinish();
+    this.completeWizard = true;
   }
 
 }

@@ -8,7 +8,7 @@
           featured images and so on. Easily apply to your own elements, modify or just use for inspiration.
           Available in CSS, Sass, and LESS.
         </p>
-        <a class="download-btn hvr-float-shadow "><i class="fa fa-github" aria-hidden="true"></i> Download on Github</a>
+        <a href="https://github.com/imheretw/imhere-angular-wizard" class="download-btn hvr-float-shadow "><i class="fa fa-github" aria-hidden="true"></i> Download on Github</a>
       </div>
     </div>
     <div class="page-header text-left">
@@ -52,9 +52,14 @@
               <imhere-pre>BACK</imhere-pre>
               <imhere-complete>COMPLETE !</imhere-complete>
             </imhere-step>
+            <imhere-step-complete>
+              <h1>Complete!</h1>
+              <p>display what you want</p>
+              <imhere-reset>RESET</imhere-reset>
+            </imhere-step-complete>
           </div>
           <div class="col-md-12">
-            <imhere-current-step></imhere-current-step> of <imhere-total-step></imhere-total-step>
+              <imhere-current-step> of </imhere-current-step><imhere-total-step></imhere-total-step>
           </div>
         </div>
       </imhere-wizard>
@@ -81,9 +86,14 @@
               <imhere-pre>BACK</imhere-pre>
               <imhere-complete>Complete</imhere-complete>
             </imhere-step>
+            <imhere-step-complete>
+              <h1>Complete!</h1>
+              <p>display what you want</p>
+              <imhere-reset>RESET</imhere-reset>
+            </imhere-step-complete>
           </div>
           <div class="col-md-12">
-            <imhere-steps-dotted>{{$index}}</imhere-steps-dotted>
+            <imhere-steps-dotted></imhere-steps-dotted>
           </div>
         </div>
       </imhere-wizard>
@@ -114,6 +124,11 @@
               <imhere-pre>BACK</imhere-pre>
               <imhere-complete>Complete</imhere-complete>
             </imhere-step>
+            <imhere-step-complete>
+              <h1>Complete!</h1>
+              <p>display what you want</p>
+              <imhere-reset>RESET</imhere-reset>
+            </imhere-step-complete>
           </div>
         </div>
       </imhere-wizard>
@@ -139,6 +154,11 @@
               <imhere-pre>BACK</imhere-pre>
               <imhere-complete>Complete</imhere-complete>
             </imhere-step>
+            <imhere-step-complete>
+              <h1>Complete!</h1>
+              <p>display what you want</p>
+              <imhere-reset>RESET</imhere-reset>
+            </imhere-step-complete>
           </div>
           <div class="col-md-2">
             <imhere-steps-nav vertical="true">

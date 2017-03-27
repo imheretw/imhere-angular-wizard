@@ -9,6 +9,8 @@ import imherePre from './imhere-pre';
 import imhereComplete from './imhere-complete';
 import imhereStepsDotted from './imhere-steps-dotted';
 import imhereStepsNav from './imhere-steps-nav';
+import imhereStepComplete from './imhere-step-complete';
+import imhereReset from './imhere-reset';
 
 import './imhere-wizard.css';
 import './imhere-hover-animation.css';
@@ -25,4 +27,6 @@ export default angular
     imhereComplete.name,
     imhereStepsDotted.name,
     imhereStepsNav.name,
+    imhereStepComplete.name,
+    imhereReset.name,
   ]);
