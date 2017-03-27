@@ -32,7 +32,7 @@ module.exports = function makeWebpackConfig() {
    */
   config.entry = isTest ? void 0 : {
     app: './examples/default/app/app.js',
-    components: './src/components/index.js',
+    'imhere-angular-wizard': './src/components/index.js',
   };
 
   /**
@@ -51,11 +51,11 @@ module.exports = function makeWebpackConfig() {
 
     // Filename for entry points
     // Only adds hash in build mode
-    filename: isProd ? '[name].[hash].js' : '[name].bundle.js',
+    filename: isProd ? '[name].js' : '[name].bundle.js',
 
     // Filename for non-entry points
     // Only adds hash in build mode
-    chunkFilename: isProd ? '[name].[hash].js' : '[name].bundle.js'
+    chunkFilename: isProd ? '[name].js' : '[name].bundle.js'
   };
 
   config.resolve = {
