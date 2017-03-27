@@ -12,6 +12,7 @@ let app = () => {
 };
 
 class AppCtrl {
+  /*@ngInject*/
   constructor($log) {
     this.$log = $log;
     this.checkPass = false;
