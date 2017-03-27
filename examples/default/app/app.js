@@ -14,10 +14,20 @@ let app = () => {
 class AppCtrl {
   constructor($log) {
     this.$log = $log;
+    this.checkPass = false;
     this.url = 'https://github.com/preboot/angular-webpack';
   }
   finish() {
-    $log.debug('finish');
+    this.$log.debug('finish');
+  }
+  check(){
+    return !this.checkPass;
+  }
+  setCheckPass(){
+    this.checkPass = true;
+  }
+  lockCheckPass(){
+    this.checkPass = false;
   }
 }
 

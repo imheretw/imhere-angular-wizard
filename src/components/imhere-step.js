@@ -3,18 +3,18 @@ import angular from 'angular';
 class Controller {
 
   constructor() {
-
   }
   $onInit() {
     this.stepIndex =  this.wizardCtrl.steps.length + 1;
-    this.wizardCtrl.steps.push({title:this.title});
+    this.wizardCtrl.steps.push({ title:this.title, disabled:this.disabled });
   }
 
 }
 
 const component = {
   bindings: {
-    title: '@'
+    title: '@',
+    disabled: '<',
   },
   require: {
     wizardCtrl: '^imhereWizard'

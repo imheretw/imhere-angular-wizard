@@ -4,20 +4,28 @@ class Controller {
 
   constructor() {
   }
+  $onInit() {
+    this.showAnimation = (this.disableHoverClass) ? false : true;
+  }
 
   next(){
-    this.wizardCtrl.nextStep();
+    if( !this.disabled ){
+      this.wizardCtrl.nextStep();
+    }
   }
 
 }
 
 const component = {
   bindings: {
+    disableHoverClass:'<',
+    customeClass:'@',
+    disabled:'=',
   },
   restrict: 'EA',
   transclude: true,
   require: {
-    wizardCtrl: '^imhereWizard'
+    wizardCtrl: '^imhereWizard',
   },
   controller: Controller,
   controllerAs: 'vm',
