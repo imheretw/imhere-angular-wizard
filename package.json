@@ -1,9 +1,13 @@
 {
   "name": "imhere-wizard-component",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "An Angular wizard component made with Webpack",
   "main": "dist/imhere-wizard-component.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "prepublish": "npm run build",
     "build": "rimraf dist && webpack --bail --progress --profile",
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
     "test": "karma start",
