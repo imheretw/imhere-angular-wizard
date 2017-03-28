@@ -1,89 +1,84 @@
-# angular-webpack
+# imhere-angular-wizard
 
 [![Dependency Status](https://david-dm.org/preboot/angular-webpack/status.svg)](https://david-dm.org/preboot/angular-webpack#info=dependencies) [![devDependency Status](https://david-dm.org/preboot/angular-webpack/dev-status.svg)](https://david-dm.org/preboot/angular-webpack#info=devDependencies)
 
-A complete, yet simple, starter for Angular using Webpack.
+Imhere-Angular-wizard is a component that will make it easy for you to create wizards in your app. You can check a running example of the wizard [by clicking here](https://imheretw.github.io/imhere-angular-wizard/)
 
-This workflow serves as a starting point for building Angular 1.x applications using Webpack 2.x. Should be noted that apart from the pre-installed angular package, this workflow is pretty much generic.
+# How do I add this to my project?
+You can download this by:
 
-* Heavily commented webpack configuration with reasonable defaults.
-* ES6, and ES7 support with babel.
-* Source maps included in all builds.
-* Development server with live reload.
-* Production builds with cache busting.
-* Testing environment using karma to run tests and jasmine as the framework.
-* Code coverage when tests are run.
-* No gulp and no grunt, just npm scripts.
+* Using bower and running `bower install imhere-angular-wizard`
+* Using npm and running `npm install imhere-angular-wizard`
+* Downloading it manually by getting the files from the dist folder
 
->Warning: Make sure you're using the latest version of Node.js and NPM
+The dist folder contains the following files:
 
-### Quick start
+* JS files needed for the directives and services
+* CSS files with default styles for the directive
 
-> Clone/Download the repo then edit `app.js` inside [`/src/app/app.js`](/src/app/app.js)
+# Dependencies
+Imhere-Angular-wizard depends on Angular.
 
-```bash
-# clone our repo
-$ git clone https://github.com/preboot/angular-webpack.git my-app
+# Starter Guide
 
-# change directory to your app
-$ cd my-app
+## First example
 
-# install the dependencies with npm
-$ npm install
+The first thing we need to do is add a dependency to imhere-angular-wizard module which is called `imhere-angular-wizard`.
 
-# start the server
-$ npm start
-```
+We can do this simply by doing:
 
-go to [http://localhost:8080](http://localhost:8080) in your browser.
+````js
+angular.module('your-app', ['imhere-angular-wizard']);
+````
 
-# Table of Contents
+Now, in some HTML for a controller, you can just add a wizard as follows:
 
-* [Getting Started](#getting-started)
-    * [Dependencies](#dependencies)
-    * [Installing](#installing)
-    * [Running the app](#running-the-app)
-    * [Developing](#developing)
-    * [Testing](#testing)
-* [License](#license)
+````html
+<imhere-wizard on-finish="app.finish()" >
+  <div class="row">
+    <div class="col-md-12">
+      <imhere-steps-nav>
+        <imhere-step-btn ng-repeat="step in [1,2,3] track by $index" step-index="$index"></imhere-step-btn>
+      </imhere-steps-nav>
+    </div>
+    <div class="col-md-12">
+      <imhere-step title="Default step button">
+        <h1>Default step button</h1>
+        <p>You have continued here!</p>
+        <imhere-next>NEXT </imhere-next>
+      </imhere-step>
+      <imhere-step title="Step1">
+        <h1>Step1</h1>
+        <p>You have continued here!</p>
+        <imhere-pre>BACK</imhere-pre>
+        <imhere-next>NEXT</imhere-next>
+      </imhere-step>
+      <imhere-step title="Step2">
+        <h1>Step2</h1>
+        <p>Click Complete will trigger onFinsh function</p>
+        <imhere-pre>BACK</imhere-pre>
+        <imhere-complete>Complete</imhere-complete>
+      </imhere-step>
+      <imhere-step-complete>
+        <h1>Complete!</h1>
+        <p>display what you want</p>
+        <imhere-reset>RESET</imhere-reset>
+      </imhere-step-complete>
+    </div>
+  </div>
+</imhere-wizard>
+````
 
-# Getting Started
+This will look like the following when you're in the second step:
 
-## Dependencies
+[![Looks like](https://cloud.githubusercontent.com/assets/5419010/24394236/c5e51336-13cd-11e7-8359-adf80574a318.png)](https://cloud.githubusercontent.com/assets/5419010/24394236/c5e51336-13cd-11e7-8359-adf80574a318.png)
 
-What you need to run this app:
-* `node` and `npm` (Use [NVM](https://github.com/creationix/nvm))
-* Ensure you're running Node (`v4.1.x`+) and NPM (`2.14.x`+)
+Let's go step by step to see how this works.
 
-## Installing
+1) You need to declare a master `imhere-wizard` directive. This wizard directive, has the following options as attributes:
+* **on-finish**: Here you can put a function to be called when the wizard is finished. The syntax here is very similar to `ng-click`
+* **set-main-color**: Here you can set the wizard main color style.
+* **set-main-hover-Color**: Here you can set the wizard buttons hover color style. Default darken(main-color).
 
-* `fork` this repo
-* `clone` your fork
-* `npm install` to install all dependencies
-
-## Running the app
-
-After you have installed all dependencies you can now run the app with:
-```bash
-npm start
-```
-
-It will start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you as `http://localhost:8080`.
-
-## Developing
-
-### Build files
-
-* single run: `npm run build`
-* build files and watch: `npm start`
-
-## Testing
-
-#### 1. Unit Tests
-
-* single run: `npm test`
-* live mode (TDD style): `npm run test-watch`
-
-# License
-
-[MIT](/LICENSE)
+2)`imhere-step`, Inside the wizard, we can have as many steps as we want. Each step MUST have a title which is going to be used to identify it. Inside each step, we can put whatever we want. Other directives, bindings, controls, forms, etc.  Each step can have the following attributes (we will go into detail on each further below):
+* **title:** A unique title used for identifying each step.
