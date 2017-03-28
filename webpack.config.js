@@ -1,30 +1,28 @@
-'use strict';
-
 // Modules
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
-var GhPagesWebpackPlugin = require('gh-pages-webpack-plugin');
-var path = require('path');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
+const GhPagesWebpackPlugin = require('gh-pages-webpack-plugin');
+const path = require('path');
 
 /**
  * Env
  * Get npm lifecycle event to identify the environment
  */
-var ENV = process.env.npm_lifecycle_event;
-var isTest = ENV === 'test' || ENV === 'test-watch';
-var isProd = ENV === 'build';
+const ENV = process.env.npm_lifecycle_event;
+const isTest = ENV === 'test' || ENV === 'test-watch';
+const isProd = ENV === 'build';
 
-module.exports = function makeWebpackConfig() {
+module.exports = (function makeWebpackConfig() {
   /**
    * Config
    * Reference: http://webpack.github.io/docs/configuration.html
    * This is the object where all configuration gets set
    */
-  var config = {};
+  const config = {};
 
   /**
    * Entry
@@ -32,7 +30,7 @@ module.exports = function makeWebpackConfig() {
    * Should be an empty object if it's generating a test build
    * Karma will set this when it's a test build
    */
-  config.entry = isTest ? void 0 : {
+  config.entry = isTest ? {} : {
     app: './examples/default/app/app.js',
     'imhere-angular-wizard': './src/components/index.js',
   };
@@ -45,7 +43,7 @@ module.exports = function makeWebpackConfig() {
    */
   config.output = isTest ? {} : {
     // Absolute output directory
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, './dist'),
 
     // Output path from the view of the page
     // Uses webpack-dev-server in development
@@ -57,7 +55,7 @@ module.exports = function makeWebpackConfig() {
 
     // Filename for non-entry points
     // Only adds hash in build mode
-    chunkFilename: isProd ? '[name].js' : '[name].bundle.js'
+    chunkFilename: isProd ? '[name].js' : '[name].bundle.js',
   };
 
   config.resolve = {
@@ -74,11 +72,9 @@ module.exports = function makeWebpackConfig() {
    */
   if (isTest) {
     config.devtool = 'inline-source-map';
-  }
-  else if (isProd) {
+  } else if (isProd) {
     config.devtool = 'source-map';
-  }
-  else {
+  } else {
     config.devtool = 'eval-source-map';
   }
 
@@ -98,7 +94,7 @@ module.exports = function makeWebpackConfig() {
       // Compiles ES6 and ES7 into ES5 code
       test: /\.js$/,
       loader: 'babel-loader',
-      exclude: /node_modules/
+      exclude: /node_modules/,
     }, {
       // CSS LOADER
       // Reference: https://github.com/webpack/css-loader
@@ -116,10 +112,10 @@ module.exports = function makeWebpackConfig() {
       loader: isTest ? 'null-loader' : ExtractTextPlugin.extract({
         fallbackLoader: 'style-loader',
         loader: [
-          {loader: 'css-loader', query: {sourceMap: true}},
-          {loader: 'postcss-loader'}
+          { loader: 'css-loader', query: { sourceMap: true } },
+          { loader: 'postcss-loader' },
         ],
-      })
+      }),
     }, {
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader
@@ -128,14 +124,14 @@ module.exports = function makeWebpackConfig() {
       // Pass along the updated reference to your code
       // You can add here any file extension you want to get copied to your output
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-      loader: 'file-loader'
+      loader: 'file-loader',
     }, {
       // HTML LOADER
       // Reference: https://github.com/webpack/raw-loader
       // Allow loading html through js
       test: /\.html$/,
-      loader: 'raw-loader'
-    }]
+      loader: 'raw-loader',
+    }],
   };
 
   // ISTANBUL LOADER
@@ -148,13 +144,13 @@ module.exports = function makeWebpackConfig() {
       test: /\.js$/,
       exclude: [
         /node_modules/,
-        /\.spec\.js$/
+        /\.spec\.js$/,
       ],
       loader: 'istanbul-instrumenter-loader',
       query: {
-        esModules: true
-      }
-    })
+        esModules: true,
+      },
+    });
   }
 
   /**
@@ -175,13 +171,13 @@ module.exports = function makeWebpackConfig() {
       test: /\.scss$/i,
       options: {
         postcss: {
-          plugins: [autoprefixer]
-        }
-      }
+          plugins: [autoprefixer],
+        },
+      },
     }),
-    new ngAnnotatePlugin({
-        add: true,
-        // other ng-annotate options here
+    new NgAnnotatePlugin({
+      add: true,
+      // other ng-annotate options here
     }),
   ];
 
@@ -193,14 +189,13 @@ module.exports = function makeWebpackConfig() {
       new HtmlWebpackPlugin({
         template: './examples/default/index.html',
         inject: 'body',
-
       }),
 
       // Reference: https://github.com/webpack/extract-text-webpack-plugin
       // Extract css files
       // Disabled when in test mode or not in build mode
-      new ExtractTextPlugin({filename: 'css/[name].css', disable: !isProd, allChunks: true})
-    )
+      new ExtractTextPlugin({ filename: 'css/[name].css', disable: !isProd, allChunks: true })
+    );
   }
 
   // Add build specific plugins
@@ -219,25 +214,22 @@ module.exports = function makeWebpackConfig() {
       new webpack.optimize.UglifyJsPlugin(),
 
       new GhPagesWebpackPlugin({
-          path: './dist',
-          options: {
-              message: 'Update Home Page',
-              user: {
-                  name: 'imhere',
-                  email: 'imhere.in.tw@gmail.com'
-              }
-          }
+        path: './dist',
+        options: {
+          message: 'Update Home Page',
+          user: {
+            name: 'imhere',
+            email: 'imhere.in.tw@gmail.com',
+          },
+        },
       }),
 
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
       new CopyWebpackPlugin([{
-        from: __dirname + '/examples/default'
+        from: path.resolve(__dirname, './examples/default'),
       }])
-
-
-
-    )
+    );
   }
 
   /**
@@ -247,8 +239,8 @@ module.exports = function makeWebpackConfig() {
    */
   config.devServer = {
     contentBase: './examples/default',
-    stats: 'minimal'
+    stats: 'minimal',
   };
 
   return config;
-}();
+}());
