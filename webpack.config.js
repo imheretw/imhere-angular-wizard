@@ -49,7 +49,7 @@ module.exports = function makeWebpackConfig() {
 
     // Output path from the view of the page
     // Uses webpack-dev-server in development
-    publicPath: isProd ? '/' : 'http://localhost:8080/',
+    publicPath: isProd ? 'https://imheretw.github.io/imhere-angular-wizard/' : 'http://localhost:8080/',
 
     // Filename for entry points
     // Only adds hash in build mode
@@ -192,7 +192,8 @@ module.exports = function makeWebpackConfig() {
     config.plugins.push(
       new HtmlWebpackPlugin({
         template: './examples/default/index.html',
-        inject: 'body'
+        inject: 'body',
+
       }),
 
       // Reference: https://github.com/webpack/extract-text-webpack-plugin
