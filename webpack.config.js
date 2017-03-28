@@ -7,6 +7,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
+var GhPagesWebpackPlugin = require('gh-pages-webpack-plugin');
 var path = require('path');
 
 /**
@@ -181,7 +182,7 @@ module.exports = function makeWebpackConfig() {
     new ngAnnotatePlugin({
         add: true,
         // other ng-annotate options here
-    })
+    }),
   ];
 
   // Skip rendering index.html in test mode
@@ -216,11 +217,25 @@ module.exports = function makeWebpackConfig() {
       // Minify all javascript, switch loaders to minimizing mode
       new webpack.optimize.UglifyJsPlugin(),
 
+      new GhPagesWebpackPlugin({
+          path: './dist',
+          options: {
+              message: 'Update Home Page',
+              user: {
+                  name: 'imhere',
+                  email: 'imhere.in.tw@gmail.com'
+              }
+          }
+      }),
+
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
       new CopyWebpackPlugin([{
         from: __dirname + '/examples/default'
       }])
+
+
+
     )
   }
 
