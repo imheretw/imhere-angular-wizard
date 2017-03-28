@@ -1,10 +1,11 @@
 {
   "name": "imhere-angular-wizard",
-  "version": "1.1.3",
+  "version": "1.1.5",
   "description": "An Angular wizard component made with Webpack",
   "main": "dist/imhere-angular-wizard.js",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
     "prepublish": "npm run build",
@@ -16,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/imhretw/imhere-angular-starter.git"
+    "url": "https://github.com/imheretw/imhere-angular-wizard.git"
   },
   "author": "Imhere",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/imhretw/imhere-angular-starter/issues"
+    "url": "https://github.com/imheretw/imhere-angular-wizard/issues"
   },
-  "homepage": "https://github.com/imhretw/imhere-angular-starter",
+  "homepage": "https://github.com/imheretw/imhere-angular-wizard",
   "dependencies": {
     "angular": "^1.5.0"
   },
