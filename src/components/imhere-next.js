@@ -1,15 +1,12 @@
 import angular from 'angular';
 
 class Controller {
-
-  constructor() {
-  }
   $onInit() {
-    this.showAnimation = (this.disableHoverClass) ? false : true;
+    this.showAnimation = !this.disableHoverClass;
   }
 
-  next(){
-    if( !this.disabled ){
+  next() {
+    if (!this.disabled) {
       this.wizardCtrl.nextStep();
     }
   }
@@ -18,9 +15,9 @@ class Controller {
 
 const component = {
   bindings: {
-    disableHoverClass:'<',
-    customeClass:'@',
-    disabled:'=',
+    disableHoverClass: '<',
+    customeClass: '@',
+    disabled: '=',
   },
   restrict: 'EA',
   transclude: true,

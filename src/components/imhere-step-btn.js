@@ -2,10 +2,7 @@ import angular from 'angular';
 
 class Controller {
 
-  constructor() {
-
-  }
-  isSelected(){
+  isSelected() {
     return this.wizardCtrl.currentStep === this.stepIndex + 1;
   }
 

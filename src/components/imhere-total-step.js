@@ -1,10 +1,6 @@
 import angular from 'angular';
 
 class Controller {
-
-  constructor() {
-  }
-  
 }
 
 const component = {
@@ -12,7 +8,7 @@ const component = {
   },
   transclude: true,
   require: {
-    wizardCtrl: '^imhereWizard'
+    wizardCtrl: '^imhereWizard',
   },
   controller: Controller,
   controllerAs: 'vm',

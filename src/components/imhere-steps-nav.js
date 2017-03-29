@@ -2,8 +2,6 @@ import angular from 'angular';
 
 class Controller {
 
-  constructor() {
-  }
 }
 
 const component = {
