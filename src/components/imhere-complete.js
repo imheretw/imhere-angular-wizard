@@ -2,29 +2,26 @@ import angular from 'angular';
 
 class Controller {
 
-  constructor() {
-  }
   $onInit() {
-    this.showAnimation = (this.disableHoverClass) ? false : true;
+    this.showAnimation = !this.disableHoverClass;
   }
   complete() {
-    if( !this.disabled ){
+    if (!this.disabled) {
       this.wizardCtrl.complete();
     }
   }
-
 }
 
 const component = {
   bindings: {
-    disableHoverClass:'<',
-    customeClass:'@',
-    disabled:'=',
+    disableHoverClass: '<',
+    customeClass: '@',
+    disabled: '=',
   },
   restrict: 'EA',
   transclude: true,
   require: {
-    wizardCtrl: '^imhereWizard'
+    wizardCtrl: '^imhereWizard',
   },
   controller: Controller,
   controllerAs: 'vm',

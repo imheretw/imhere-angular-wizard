@@ -21,23 +21,20 @@ class AppCtrl {
   finish() {
     this.$log.debug('finish');
   }
-  check(){
+  check() {
     return !this.checkPass;
   }
-  setCheckPass(){
+  setCheckPass() {
     this.checkPass = true;
   }
-  lockCheckPass(){
+  lockCheckPass() {
     this.checkPass = false;
   }
 }
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [
-  'imhere-angular-wizard',
-])
+angular.module(MODULE_NAME, ['imhere-angular-wizard'])
   .directive('app', app)
   .controller('AppCtrl', AppCtrl);
-
 export default MODULE_NAME;

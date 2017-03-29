@@ -1,17 +1,13 @@
 import angular from 'angular';
 
 class Controller {
-
-  constructor() {
-  }
-
 }
 
 const component = {
   bindings: {
   },
   require: {
-    wizardCtrl: '^imhereWizard'
+    wizardCtrl: '^imhereWizard',
   },
   transclude: true,
   controller: Controller,

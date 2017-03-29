@@ -2,18 +2,13 @@ import angular from 'angular';
 
 class Controller {
 
-  constructor() {
-
+  isSelected(index) {
+    return this.wizardCtrl.currentStep === index + 1;
   }
-  isSelected(index){
-    return this.wizardCtrl.currentStep === index+1;
-  }
-
 }
 
 const component = {
-  bindings: {
-  },
+  bindings: {},
   transclude: true,
   require: {
     wizardCtrl: '^imhereWizard',
