@@ -17,6 +17,7 @@
   },
   "author": "Imhere",
   "license": "MIT",
+  "keywords": ["angular", "wizard"],
   "bugs": {
     "url": "https://github.com/imheretw/imhere-angular-wizard/issues"
   },
