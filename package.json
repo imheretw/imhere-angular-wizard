@@ -1,6 +1,6 @@
 {
   "name": "imhere-angular-wizard",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "An Angular wizard component made with Webpack",
   "main": "dist/imhere-angular-wizard.js",
   "scripts": {
