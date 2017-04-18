@@ -1,5 +1,5 @@
-<a class="{{ vm.customeClass }}" ng-class="{ 'imhere-step-btn' : !vm.customeClass, 'selected': vm.isSelected() }" >
+<a class="{{ vm.customClass }}" ng-class="{ 'imhere-step-btn' : !vm.customClass, 'selected': vm.isSelected() }" >
   <ng-transclude></ng-transclude>
-  <div class="imhere-step-btn__index" ng-hide="vm.customeClass">{{ vm.stepIndex + 1 }}</div>
-  <div class="imhere-step-btn__title"ng-hide="vm.customeClass">{{ vm.wizardCtrl.steps[vm.stepIndex].title }}</div>
+  <div class="imhere-step-btn__index" ng-hide="vm.customClass">{{ vm.stepIndex + 1 }}</div>
+  <div class="imhere-step-btn__title"ng-hide="vm.customClass">{{ vm.wizardCtrl.steps[vm.stepIndex].title }}</div>
 </a>

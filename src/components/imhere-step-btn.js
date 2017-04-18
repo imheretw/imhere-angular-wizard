@@ -11,7 +11,7 @@ class Controller {
 const component = {
   bindings: {
     stepIndex: '<',
-    customeClass: '@',
+    customClass: '@',
   },
   transclude: true,
   require: {
