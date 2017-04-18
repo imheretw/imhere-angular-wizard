@@ -14,7 +14,7 @@ class Controller {
 const component = {
   bindings: {
     disableHoverClass: '<',
-    customeClass: '@',
+    customClass: '@',
     disabled: '=',
   },
   restrict: 'EA',
