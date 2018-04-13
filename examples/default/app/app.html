@@ -65,6 +65,67 @@
       </imhere-wizard>
     </div>
     <div class="pannel-box">
+      <imhere-wizard on-finish="app.finish()" set-main-color="#6bbed7" >
+        <form name="app.form">
+          <div class="row">
+            <div class="col-md-12">
+              <imhere-step title="Step1">
+                  <div class="page-header">
+                    <h1>Bootstrapt Form</h1>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-left">
+                      <div class="form-group" ng-class="{ 'has-error' : app.form.email.$invalid && !app.form.email.$pristine }">
+                        <label>Email address *</label>
+                        <input type="email" class="form-control" name="email" ng-model="app.form.exampelEmail" required placeholder="email">
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" ng-model="app.agreeStatement"> Agree To Next
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <imhere-next disabled="app.form.email.$invalid || !app.agreeStatement">NEXT ></imhere-next>
+              </imhere-step>
+              <imhere-step title="Step2" >
+                <h1>Step2</h1>
+                <div class="col-md-6 col-md-offset-3 text-left">
+                    <div class="form-group" ng-class="{ 'has-error' : app.form.name.$invalid && !app.form.name.$pristine }">
+                      <label>Name *</label>
+                      <input type="text" class="form-control" name="name" ng-model="app.form.exampelName" placeholder="Name" required>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : app.egeCheckFail }">
+                      <label>Age</label>
+                      <input type="number" class="form-control" placeholder="18" ng-model="app.form.exampelAge" name="age" required>
+                      <span class="text-danger" ng-if="app.ageCheckFail">Age need > 18</span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                  <imhere-pre disable-hover-class="true" custom-class="custom hvr-backward">< BACK</imhere-pre>
+                  <imhere-next disabled="app.checkAge(app.form)">NEXT ></imhere-next>
+                </div>
+              </imhere-step>
+              <imhere-step title="Step3">
+                <h1>Step3</h1>
+                <p>Click Complete will trigger onFinsh function</p>
+                <imhere-pre>BACK</imhere-pre>
+                <imhere-complete>COMPLETE !</imhere-complete>
+              </imhere-step>
+              <imhere-step-complete>
+                <h1>Complete!</h1>
+                <p>display what you want</p>
+                <imhere-reset>RESET</imhere-reset>
+              </imhere-step-complete>
+            </div>
+            <div class="col-md-12">
+                <imhere-current-step> of </imhere-current-step><imhere-total-step></imhere-total-step>
+            </div>
+          </div>
+        </form>
+      </imhere-wizard>
+    </div>
+    <div class="pannel-box">
       <imhere-wizard on-finish="app.finish()" set-main-hover-color="#eb9c4a">
         <div class="row">
           <div class="col-md-12">
