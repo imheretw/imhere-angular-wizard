@@ -1,14 +1,129 @@
+.imhere-wizard-container {
+  width: 100%;
+  position: relative;
+}
+
+/*--main-color from imher-wizard component*/
+.imhere-wizard-container a {
+  cursor: pointer;
+}
+.imhere-dotted-container {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+a.imhere-dotted {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: var(--main-color);
+  border-radius: 100%;
+  margin-left: 3px;
+}
+a.imhere-dotted.selected{
+  background: var(--main-hover-color);
+  width: 6px;
+  height: 6px;
+
+}
+.imhere-step-nav-container{
+  width: 100%;
+  position: relative;
+}
+.imhere-step-nav-container:before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  top: 15px;
+  background: var(--main-color);
+  z-index: -1;
+}
+.imhere-step-nav-container.-vertical{
+  text-align: left;
+  padding:30px 0;
+}
+.imhere-step-nav-container.-vertical:before{
+  content: '';
+  display: block;
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  left: 15px;
+  top: 0;
+  background: var(--main-color);
+  z-index: -1;
+}
+.imhere-step-nav-container .imhere-step-btn{
+  display: inline-block;
+}
+.imhere-step-nav-container.-vertical .imhere-step-btn{
+  display: block;
+  margin:0 0 10px 0;
+}
+.imhere-step-nav-container.-vertical .imhere-step-btn__index, .imhere-step-nav-container.-vertical .imhere-step-btn__title{
+  display: inline-block;
+}
+.imhere-step-btn {
+  cursor: pointer;
+  color: var(--main-color);
+  text-decoration: none;
+  margin: 0 10px;
+}
+.imhere-step-btn:hover{
+  text-decoration: none;
+  color: var(--main-hover-color);
+}
+.imhere-step-btn.selected .imhere-step-btn__index{
+  background: var(--main-hover-color);
+  color:#fff;
+}
+.imhere-step-btn.selected .imhere-step-btn__title{
+  color: var(--main-hover-color);
+}
+.imhere-step-btn__index{
+  width:30px;
+  height:30px;
+  line-height: 25px;
+  color: var(--main-color);
+  border-radius: 100%;
+  border: 2px var(--main-color) solid;
+  text-align: center;
+  background: #fff;
+  text-decoration: none;
+}
+.imhere-step-btn__title {
+  display: none;
+}
+
+
+.imhere-next, .imhere-pre, .imhere-total-step, .imhere-current-step, .imhere-complete, .imhere-reset {
+  cursor: pointer;
+  color: var(--main-color);
+}
+a.imhere-next, a.imhere-pre, a.imhere-complete, a.imhere-reset {
+  padding: 10px 50px;
+  display: inline-block;
+  background: var(--main-color);
+  border-radius: 5px;
+  margin: 20px 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.imhere-steps-container {
+  position: relative;
+}
 /* Bounce To Right */
 .imhere-bounce-to-right {
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
   position: relative;
-  -webkit-transition-property: color;
   transition-property: color;
-  -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
 .imhere-bounce-to-right:before {
@@ -20,24 +135,17 @@
   right: 0;
   bottom: 0;
   background: var(--main-hover-color);
-  -webkit-transform: scaleX(0);
   transform: scaleX(0);
-  -webkit-transform-origin: 0 50%;
   transform-origin: 0 50%;
-  -webkit-transition-property: transform;
   transition-property: transform;
-  -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
 .imhere-bounce-to-right:hover, .imhere-bounce-to-right:focus, .imhere-bounce-to-right:active {
   color: white;
 }
 .imhere-bounce-to-right:hover:before, .imhere-bounce-to-right:focus:before, .imhere-bounce-to-right:active:before {
-  -webkit-transform: scaleX(1);
   transform: scaleX(1);
-  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
 
@@ -45,13 +153,10 @@
 .imhere-bounce-to-left {
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
   position: relative;
-  -webkit-transition-property: color;
   transition-property: color;
-  -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
 .imhere-bounce-to-left:before {
@@ -63,24 +168,17 @@
   right: 0;
   bottom: 0;
   background: var(--main-hover-color);
-  -webkit-transform: scaleX(0);
   transform: scaleX(0);
-  -webkit-transform-origin: 100% 50%;
   transform-origin: 100% 50%;
-  -webkit-transition-property: transform;
   transition-property: transform;
-  -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
 .imhere-bounce-to-left:hover, .imhere-bounce-to-left:focus, .imhere-bounce-to-left:active {
   color: white;
 }
 .imhere-bounce-to-left:hover:before, .imhere-bounce-to-left:focus:before, .imhere-bounce-to-left:active:before {
-  -webkit-transform: scaleX(1);
   transform: scaleX(1);
-  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
 
@@ -89,14 +187,11 @@
 .imhere-shutter-in-horizontal {
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
   position: relative;
   background: #2098D1;
-  -webkit-transition-property: color;
   transition-property: color;
-  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 .imhere-shutter-in-horizontal:before {
@@ -108,22 +203,16 @@
   left: 0;
   right: 0;
   background: var(--main-hover-color);
-  -webkit-transform: scaleX(1);
   transform: scaleX(1);
-  -webkit-transform-origin: 50%;
   transform-origin: 50%;
-  -webkit-transition-property: transform;
   transition-property: transform;
-  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
 .imhere-shutter-in-horizontal:hover, .imhere-shutter-in-horizontal:focus, .imhere-shutter-in-horizontal:active {
   color: white;
 }
 .imhere-shutter-in-horizontal:hover:before, .imhere-shutter-in-horizontal:focus:before, .imhere-shutter-in-horizontal:active:before {
-  -webkit-transform: scaleX(0);
   transform: scaleX(0);
 }
 
@@ -131,14 +220,11 @@
 .imhere-shutter-out-horizontal {
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
   position: relative;
   background: #e1e1e1;
-  -webkit-transition-property: color;
   transition-property: color;
-  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 .imhere-shutter-out-horizontal:before {
@@ -150,21 +236,17 @@
   left: 0;
   right: 0;
   background: var(--main-hover-color);
-  -webkit-transform: scaleX(0);
   transform: scaleX(0);
-  -webkit-transform-origin: 50%;
   transform-origin: 50%;
-  -webkit-transition-property: transform;
   transition-property: transform;
-  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
 .imhere-shutter-out-horizontal:hover, .imhere-shutter-out-horizontal:focus, .imhere-shutter-out-horizontal:active {
   color: white;
 }
 .imhere-shutter-out-horizontal:hover:before, .imhere-shutter-out-horizontal:focus:before, .imhere-shutter-out-horizontal:active:before {
-  -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
+
+/*# sourceMappingURL=imhere-angular-wizard.css.map*/
